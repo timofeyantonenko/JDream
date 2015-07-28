@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+{%  block talent  %}
+<h4>{{talent.talent_date}}</h4>
+<h4>{{talent.talent_title}}</h4>
+<h4>{{talent.talent_text}}</h4>
+<hr>
+<div class="large-offset-1 large-8 columns">
+<p>Комментарии: </p>
+{% for comment in comments %}
+	<p>{{comment.comments_text}} </p>
+	<p>	<pre>	От: {{comment.comments_from}}</pre><pre>	От: {{comment.comments_date}}</pre></p>
+{% endfor %}
+
+<div class="row">
+	<div class="large-3 large-offset-5 columns">
+		<ul class="pagination">
+			{% if comments.has_previous %}
+				<li class="arrow"><a href="/talents/get/{{talent.id}}/page/{{ comments.previous_page_number }}/">&laquo;</a></li>
+			{% else %}
+				<li class="arrow unavailable"><a href="">&laquo;</a></li>
+			{% endif %}
+			{% for page in comments.paginator.page_range %}
+				{% if page == comments.number %}
+				<li class="current"><a href="/talents/get/{{talent.id}}/page/{{ page }}/">{{ page }}</a></li>
+				{% else %}
+				<li><a href="/talents/get/{{talent.id}}/page/{{ page }}/">{{ page }}</a></li>
+				{% endif %}
+			{% endfor %}
+			{% if comments.has_next %}
+				<li class="arrow"><a href="/talents/get/{{talent.id}}/page/{{ comments.next_page_number }}/">&raquo;</a></li>
+			{% else %}
+				<li class="arrow unavailable"><a href="">&raquo;</a></li>
+			{% endif %}
+
+		</ul>
+	</div>
+</div>
+
+
+
+
+{% if username%}
+<form action="/talents/addcomment/{{ talent.id }}/" method="post">
+	{% csrf_token %}
+	{{ form_comment }}
+	<input type = "submit" class="button" value="Добавить комментарий">
+</form>
+{% endif %}
+
+
+</div>
+{%  endblock  %}

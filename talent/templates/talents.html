@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% load staticfiles%}
+
+{%  block talent  %}
+<div class="large-8 columns" >
+{% for talent in talents %}
+	<h6>Дата публикации: {{ talent.talent_date }}</h6>
+	<h6>Пользователь: {{ talent.talent_from }}</h6>
+	<h4><a href="/talents/get/{{ talent.id }}/">{{ talent.talent_title }}</a></h4>
+	<p>{{ talent.talent_text }}</p>
+	<p><a href="/talents/addlike/{{ talent.id }}/"><img src = "{% static "images.jpg" %}" width="20px" height="20px"></a> {{ talent.talent_likes }}</p>
+	<hr>
+{% endfor %}
+</div>
+<div class="row">
+	<div class="large-3 large-offset-5 columns">
+		<ul class="pagination">
+			{% if talents.has_previous %}
+				<li class="arrow"><a href="/page/{{ talents.previous_page_number }}/">&laquo;</a></li>
+			{% else %}
+				<li class="arrow unavailable"><a href="">&laquo;</a></li>
+			{% endif %}
+			{% for page in talents.paginator.page_range %}
+				{% if page == talents.number %}
+				<li class="current"><a href="/page/{{ page }}/">{{ page }}</a></li>
+				{% else %}
+				<li><a href="/page/{{ page }}/">{{ page }}</a></li>
+				{% endif %}
+			{% endfor %}
+			{% if talents.has_next %}
+				<li class="arrow"><a href="/page/{{ talents.next_page_number }}/">&raquo;</a></li>
+			{% else %}
+				<li class="arrow unavailable"><a href="">&raquo;</a></li>
+			{% endif %}
+
+		</ul>
+	</div>
+</div>
+{% if username%}
+<form action="/talents/addtalent/" method="post">
+	{% csrf_token %}
+	{{ form_talent }}
+	<input type = "submit" class="button" value="Добавить талант">
+</form>
+{% endif %}
+{% endblock %}

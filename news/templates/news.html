@@ -1,0 +1,10 @@
+
+{% extends 'main.html' %}
+
+{%  block news  %}
+{% for new in news %}
+	<p>{{ new.news_date }}  {{ new.news_title }}</p>
+	<p>{{ new.news_text }}</p>
+	<hr>
+{% endfor %}
+{% endblock %}

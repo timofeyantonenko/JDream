@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1006131926">
+    <data-source source="LOCAL" name="jDream_db" uuid="0a7683d5-22ec-42b2-abfe-6b9dac79f899">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/jDream_db.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
