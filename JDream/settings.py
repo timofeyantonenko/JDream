@@ -83,6 +83,7 @@ TEMPLATE_DIRS = (
     '/root/djangoenv/bin/JDream/talent/templates',
     '/root/djangoenv/bin/JDream/news/templates',
     '/root/djangoenv/bin/JDream/loginsys/templates',
+    '/root/djangoenv/bin/JDream/userProfile/templates',
 )
 
 # Database

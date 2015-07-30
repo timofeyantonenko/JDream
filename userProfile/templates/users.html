@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{%  block users  %}
+<div class="large-8 columns" >
+{% for user in users %}
+	<p>Имя пользователя: {{ user.name }}<div class="label round secondary"><a href="follow/{{ user.id }}/">Подписаться</a></div></p>
+
+{% endfor %}
+</div>
+
+{% endblock %}

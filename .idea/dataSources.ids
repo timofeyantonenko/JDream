@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="jDream_db" uuid="0a7683d5-22ec-42b2-abfe-6b9dac79f899">
+  <data-source name="jDream_db" uuid="827b41ab-efb9-4d7c-8c7c-a6c48bcab64f">
     <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
     <table name="UserProfile" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
-      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_UserProfile_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <exported-key name="#FAKE_userProfile_relationship_1" table="userProfile_relationship" schema="" catalog="" columns="to_person_id"/>
@@ -141,33 +141,6 @@
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
       <column name="name" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="seq" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="sqlite_sp_functions" schema="" catalog="" type="TABLE">
-      <column name="name" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="text" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="sqlite_stat1" schema="" catalog="" type="TABLE">
-      <column name="tbl" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="idx" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="stat" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="sqlite_stat4" schema="" catalog="" type="TABLE">
-      <column name="tbl" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="idx" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="neq" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="nlt" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="ndlt" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="sample" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="sqlite_vs_links_names" schema="" catalog="" type="TABLE">
-      <column name="name" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="alias" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="sqlite_vs_properties" schema="" catalog="" type="TABLE">
-      <column name="parentType" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="parentName" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="propertyName" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="propertyValue" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
     </table>
     <table name="talent" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>

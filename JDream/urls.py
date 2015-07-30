@@ -21,5 +21,7 @@ urlpatterns = [
     #dobavim url dlya talanta
     url(r'^basicview/', include('talent.urls')),
     url(r'^auth/', include('loginsys.urls')),
+    url(r'^news/$', include('news.urls')),
+    url(r'^users/$', include('userProfile.urls')),
     url(r'^', include('talent.urls'))
 ]
